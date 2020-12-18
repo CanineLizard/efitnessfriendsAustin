@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Signup</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Link for the css folder -->
+  <link rel="stylesheet" type="text/css" href="iFitnessFriend.css">
+
+</head>
+<body>
+
+<!-- Padding for idata -->
+<style>
+.jumbotron {
+  background-color: #4169E1;
+  color: #fff;
+  padding: 100px 25px;
+}
+
+.container-fluid {
+  padding: 10px 50px;
+}
+</style>
+
+
+
+                                                                                   <!--NAVAGATION BAR-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="home.html ">eFitnessFriend</a> 
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+                                                            <!--Scrollspy "udpade nav bar when scrolling-->
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<div id="Home" class="container-fluid">
+<div id="Our Mission" class="container-fluid">
+<div id="Services" class="container-fluid">
+<div id="Pricing" class="container-fluid">
+<div id="Login" class="container-fluid">
+
+
+<!-- SIGN UP HERE -->
+<form action="signupsql.php" method="post">
+  <div class="container">
+    
+
+
+<
+    <h1>Sign Up</h1>
+    <p><span class ="hr4">Please fill in this form to create an account.<span></p>
+    <hr>
+
+    <input type="text" name="name" placeholder="Full name">
+    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="uid" placeholder="Username">
+    <input type="password" name="pwd" placeholder="Password">
+    <input type="text" name="pwdrepeat" placeholder="Repeat Password">
+
+    <button type ="submit" name="submit">Sign Up</button>
+    </form>
+ 
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+
+    <div class="clearfix">
+      <a href='home.html'>
+      <button type="button" class="cancelbtn">Cancel</button>
+    </a>
+
+      <a href='login.html'>
+ <button type="button" class="button">SignUp</button>
+</a>
+<input type="submit" value="Insert">
+
+            </div>
+          </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html> <!--END-->

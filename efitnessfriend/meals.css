@@ -1,0 +1,128 @@
+                                                                                CSS for all logs 
+.logo-small {        /*This is just an example you can delete */
+  color: #4169E1;
+  font-size: 50px;
+}
+
+.logo {             /*This is just an example you can delete */
+  color: #4169E1;
+  font-size: 200px;
+}
+
+#recommended {
+  background: #D3D3D3;
+  padding: 10px;
+  text-align: left;
+  display: inline-block;
+}
+#addmealandviewmealplan {
+  
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+}
+#toprow {
+  text-align: left;
+  display: inline-block;
+}
+
+#bottomrow {
+  text-align: left;
+  display: inline-block;
+}
+#upcoming {
+  border: 1px solid white;
+  background: #D3D3D3;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  align-content: center;
+}
+
+#mostrecent {
+  border: 1px solid white;
+  background: #D3D3D3;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: black;
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color:#ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+  padding: 5px;
+  background: black;
+  color: white !important
+}
+
+#mp4 {
+  display: inline-block;
+}
+
+
+#page-wrap {
+     width: 1500px;
+     margin: 0 auto;
+}

@@ -1,0 +1,72 @@
+
+.panel {
+  border: 1px solid ##000000;
+  border-radius:0;
+  transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+  box-shadow: 1px 0px 40px rgba(0,0,0, .2);
+}
+
+.panel-footer .btn:hover {
+  border: 1px solid #4169E1;
+  background-color: #fff !important;
+  color: #4169E1;
+}
+
+.panel-heading {
+  color: #FFFFFF !important; 
+  background-color: #0066ff !important;
+  padding: 1px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.panel-footer {
+  background-color: #fff !important;
+}
+
+.panel-footer h3 {
+  font-size: 32px;
+}
+
+.panel-footer h4 {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.panel-footer .btn {
+  margin: 15px 0;
+  background-color: #4169E1;
+  color: #fff;
+}
+
+
+hr {
+  display: block;
+  margin-top: 0.6cm;
+  margin-bottom: 0.6cm;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+
+}
+
+.button {
+  height: 200px;
+  width: 50%;
+
+}
+
+#page-wrap {
+     width: 1500px;
+     margin: 0 auto;
+}
+p {
+  white-space: pre;
+}

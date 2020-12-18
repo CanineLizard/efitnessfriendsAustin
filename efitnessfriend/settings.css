@@ -1,0 +1,151 @@
+/*                                                                               CSS for all logs */
+
+.logo-small {
+  /*This is just an example you can delete */
+  color: #4169E1;
+  font-size: 50px;
+}
+
+.logo {
+  /*This is just an example you can delete */
+  color: #4169E1;
+  font-size: 200px;
+}
+
+footer .glyphicon {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #f4511e;
+}
+
+/* Settings */
+
+.settings {
+  margin-top: 5em;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.top-container h1 {
+  text-align: left;
+  font-weight: bold;
+}
+
+.image-container {
+  width: 20em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container .choose-file {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-left: 2em;
+}
+
+img {
+  width: 10em;
+}
+
+.form-group {
+  margin-left: 5em;
+}
+
+.form-group textarea {
+  height: 15em;
+}
+
+.form-control {
+  width: 40em;
+  border: 1px solid black;
+}
+
+.middle-container .label-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+.middle-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.middle-container .display-info {
+  width: 20em;
+}
+
+.middle-container .personal-info {
+  display: flex;
+}
+
+.middle-container .values-container p {
+  border: 1px solid black;
+  margin-left: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1em;
+}
+
+.middle-container .label-container {
+  font-weight: bold;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bottom-container .payment-container {
+  display: flex;
+  flex-flow: column;
+  width: 22em;
+  justify-content: space-between;
+}
+
+.payment-container input {
+  border-radius: 1em;
+}
+
+.bottom-container .notifications-container {
+  display: flex;
+  flex-flow: column;
+  width: 20em;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin: 5em;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.column-flow {
+  display: flex;
+  flex-flow: column;
+}
+
+.flex {
+  display: flex;
+}
+
+#page-wrap {
+     width: 1500px;
+     margin: 0 auto;
+}

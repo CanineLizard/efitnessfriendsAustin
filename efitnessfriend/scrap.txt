@@ -1,0 +1,213 @@
+<?php
+$conn = mysqli_connect('127.0.0.1', 'root','','e_fitness_friend');
+
+
+$sql = "SELECT  FirstName, LastName FROM user_data;";
+$result = mysqli_query($conn, $sql);
+$resultCheck = mysqli_num_rows($result);
+
+if($resultCheck > 0){
+  while($row = mysqli_fetch_assoc($result)){
+    echo "Welcome" .$row['FirstName'];
+  }
+}
+
+
+ <?php 
+//////////////////////////////////////////////////////
+$con = mysqli_connect('127.0.0.1', 'root','','e_fitness_friend');
+
+$Email = $_POST['Email'];
+$Password = $_POST['Password'];
+
+
+
+// Now we check if the data from the login form was submitted, isset() will check if the data exists.
+if ( !isset($_POST['Email'], $_POST['Password']) ) {
+	// Could not get the data that should have been sent.
+	exit('Please fill both the username and password fields!');
+}
+
+// Prepare our SQL, preparing the SQL statement will prevent SQL injection.
+if ($stmt = $con->prepare('SELECT id, Password FROM user_data WHERE Email = ?')) {
+	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
+	$stmt->bind_param('s', $_POST['Email']);
+	$stmt->execute();
+	// Store the result so we can check if the account exists in the database.
+	$stmt->store_result();
+
+if ($stmt->num_rows > 0) {
+	$stmt->bind_result($id, $Password);
+	$stmt->fetch();
+	// Account exists, now we verify the password.
+	// Note: remember to use password_hash in your registration file to store the hashed passwords.
+	if ($_POST['Password'] === $Password) {
+		// Verification success! User has loggedin!
+		// Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
+		session_regenerate_id();
+		$_SESSION['loggedin'] = TRUE;
+		$_SESSION['Email'] = $Email;
+		$_SESSION['Password'] = $Password;
+		$_SESSION['id'] = $id;
+	
+	
+		header('Location: dashboard.php ');
+	} else {
+		// Incorrect password
+		echo 'Incorrect username and/or password!';
+	}
+} else {
+	// Incorrect username
+	echo 'Incorrect username and/or password!';
+}
+
+	$stmt->close();
+}
+?>
+//////////////////////////////////////////////////////////
+$Email = $_POST['Email'];
+$Password = $_POST['Password'];
+$FirstName = $_POST['FirstName'];
+$LastName = $_POST['LastName'];
+$Address = $_POST['Address'];
+$City = $_POST['City'];
+$State = $_POST['State'];
+$Zip = $_POST['Zip'];
+$NameOnCard = $_POST['NameOnCard'];
+$CreditCardNumber = $_POST['CreditCardNumber'];
+$ExprationDate = $_POST['ExprationDate'];
+$Ccv = $_POST['Ccv'];
+$Age = $_POST['Age'];
+$Gender = $_POST['Gender'];
+$Height = $_POST['Height'];
+//$MedicalCondtions = $_POST['MedicalCondtions'];
+$CurrentWeight = $_POST['CurrentWeight'];
+$TargetWeight = $_POST['TargetWeight'];
+$BloodPressure = $_POST['BloodPressure'];
+$TargetBloodPressure = $_POST['TargetBloodPressure'];
+$HeartRate = $_POST['HeartRate'];
+$TargetBloodSugar = $_POST['TargetBloodSugar'];
+$TargetCalories = $_POST['TargetCalories'];
+
+$sql = "INSERT INTO user_data(Email,Password,FirstName,LastName,Address,City,Zip,NameOnCard,CreditCardNumber,ExprationDate,Ccv,Age,Gender,Height,CurrentWeight,TargetWeight,BloodPressure,TargetBloodPressure,HeartRate,TargetBloodSugar,TargetCalories)
+	VALUES ('$Email' ,'$Password','$FirstName', '$LastName' ,'$Address' ,'$City','$Zip','$NameOnCard','$CreditCardNumber' ,'$ExprationDate' ,'$Ccv' ,'$Age' ,'$Gender','$Height','$CurrentWeight',$TargetWeight ,'$BloodPressure' ,'$TargetBloodPressure', '$HeartRate', '$TargetBloodSugar', '$TargetCalories')";
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  <label for="email"><b>First Name</b></label>
+    <input type="text" placeholder="" name="FirstName" >
+
+    <label for="email"><b>Last Name</b></label>
+    <input type="text" placeholder="" name="LastName" >
+
+    <label for="email"><b>Address</b></label>
+    <input type="text" placeholder="" name="Address" >    
+
+    <label for="email"><b>City</b></label>
+    <input type="text" placeholder="" name="City" >
+
+    <label for="email"><b>State</b></label>
+    <input type="text" placeholder="" name="State" >
+
+    <label for="email"><b>Zip</b></label>
+    <input type="text" placeholder="" name="Zip" >
+
+    <label for="email"><b>Name on Card</b></label>
+    <input type="text" placeholder="" name="NameOnCard" >
+
+    <label for="email"><b>Credit Card Number</b></label>
+    <input type="text" placeholder="Example: 1111-1111-1111-1111" name="CreditCardNumber" >
+
+    <label for="email"><b>Expration Date</b></label>
+    <input type="text" placeholder="MM-YY" name="ExprationDate" >
+
+    <label for="email"><b>CCV</b></label>
+    <input type="text" placeholder="Example: 000" name="Ccv" >
+
+    <label for="email"><b>Age</b></label>
+    <input type="text" placeholder="" name="Age" >
+
+
+    <label for="email"><b>Gender</b></label>
+    <input type="text" placeholder="" name="Gender" >
+
+    <label for="email"><b>Height</b></label>
+    <input type="text" placeholder="Example:5'10" name="Height" >
+    
+    <label for="email"><b>Current Weight</b></label>
+    <input type="text" placeholder="425" name="CurrentWeight" >
+
+
+    <label for="email"><b>Target Weight</b></label>
+    <input type="text" placeholder="250" name="TargetWeight" >
+
+    <label for="email"><b>Blood Pressure</b></label>
+    <input type="text" placeholder="Example:132/90" name="BloodPressure" >
+
+    <label for="email"><b>Target Blood Pressure</b></label>
+    <input type="text" placeholder="Example:120/80" name="TargetBloodPressure" >
+
+    <label for="email"><b>Heart Rate</b></label>
+    <input type="text" placeholder="Example:115 " name="HeartRate" >
+
+    <label for="email"><b>Target Blood Sugar</b></label>
+    <input type="text" placeholder="170" name="TargetBloodSugar" >
+
+    <label for="email"><b>Target Calories To Burn A Day</b></label>
+    <input type="text" placeholder="2000" name="TargetCalories" >
+    ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+                 <?php   
+                  
+            $con = mysqli_connect('127.0.0.1', 'root','','e_fitness_friend');
+            $user_id = $_SESSION["userid"];
+            $query = "SELECT * FROM user_data where `user_id`= $user_id";
+            $query_run = mysqli_query($con, $query);
+            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    
+                  
+                 
+                  }
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Current Weigth: 425</td>
+          </tr>
+          <tr>
+            <td>Current Blood Pressure:<?php echo row["bloodPressure"]; ?> </td>
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+                          <div class="top-container well">
+                <div class="image-container">
+                  <div class="image">
+                    <img src="https://i.imgur.com/zrcXXt3.jpg" class="img-rounded" alt="user image" style="width: 20em;">
+                  </div>
+                  <div class="choose-file">
+                    <!-- <button type="button" class="btn btn-primary"><input type="file"> Choose File</button> -->
+                    <div class="upload-btn-wrapper">
+                      <button class="btn btn-primary upload-button">Upload a file</button>
+                      <input type="file" name="image" />
+                    </div>
+                  </div>
+                  <form>
+
+                </div>
+          <?php   
+                  
+                  $con = mysqli_connect('127.0.0.1', 'root','','e_fitness_friend');
+                  $user_id = $_SESSION["userid"];
+                  $query = "SELECT * FROM user_comments where `user_id`= $user_id";
+                  $query_run = mysqli_query($con, $query);
+                  while($row = mysqli_fetch_array($query_run)){
+
+                    
+                      $user_Comments = ['comments']; 
+                  }
+                  ?>
+                <div class="form-group">
+                  <label for="comment">Description:</label>
+           
+
+                </div>
+                </form>
+              </div>
+(61-94)
